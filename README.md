@@ -1,6 +1,6 @@
-# Fort Wayne AWS User Group - Into to AWS Lambda 
+# Fort Wayne AWS User Group - Intro to AWS Lambda 
 
-The repo contains the slides and demo code for the Fort Wayne AWS User Group's presention Into to AWS Lambda
+The repo contains the slides and demo code for the Fort Wayne AWS User Group's presention Intro to AWS Lambda
 
 ## Getting Started
 
