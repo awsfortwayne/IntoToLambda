@@ -1,4 +1,4 @@
-PROFILE=jeff
+PROFILE=default
 REGION=us-west-1
 S3_BUCKET=intro-to-aws-lambda
 STACK=Fort-Wayne-AWS-User-Group-Intro-To-AWS-Lambda
