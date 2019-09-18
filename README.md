@@ -90,7 +90,11 @@ aws cloudformation deploy --template-file packaged.yaml --stack-name Fort-Wayne-
 
 ### Testing in AWS
 
-Once deployed the Lamdba can be viewed in the AWS Console under the Lambda service. Clicking on the *API Gateway* trigger in the designer section will reveal the URL you can use to test your lambda. This URL can be loaded in any browers, in a REST client like [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) or via the curl command a terminal. If successful you should receive a message stating your name was added to the guestbook. You can view the guestbook in the DynamoDB table named *Fort_Wayne_AWS_User_Group_Guestbook*. You can also view logs for your Lambda in CloudWatch and can trace the execution of your Lambda in AWS X-Ray service.
+Once deployed the Lamdba can be viewed in the AWS Console under the Lambda service. Clicking on the *API Gateway* trigger in the designer section will reveal the URL you can use to test your lambda.
+
+![Image of Lambda](https://github.com/awsfortwayne/IntoToLambda/blob/master/Lambda%20Screenshot.png?raw=true)
+
+This URL can be loaded in any browers, in a REST client like [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) or via the curl command a terminal. If successful you should receive a message stating your name was added to the guestbook. You can view the guestbook in the DynamoDB table named *Fort_Wayne_AWS_User_Group_Guestbook*. You can also view logs for your Lambda in CloudWatch and can trace the execution of your Lambda in AWS X-Ray service.
 
 ### Cleanup
 
