@@ -1,0 +1,19 @@
+{
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "name",
+            "AttributeType": "S"
+        }
+    ],
+    "TableName": "Fort_Wayne_AWS_User_Group_Guestbook",
+    "KeySchema": [
+        {
+            "AttributeName": "name",
+            "KeyType": "HASH"
+        }
+    ],
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 2,
+        "WriteCapacityUnits": 2
+    }
+}

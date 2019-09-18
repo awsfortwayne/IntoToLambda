@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+
+  GuestbookFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: cmd/guestbook/guestbook
+        Runtime: go1.x
+        Tracing: Active
+        Timeout: 60
+        Policies:
+            - DynamoDBCrudPolicy:
+                TableName: "Fort_Wayne_AWS_User_Group_Guestbook"
+        Events:
+          GuestbookRequest:
+            Type: Api
+            Properties:
+              Path: /guestbook/{name}
+              Method: Get
+  GuestbookFunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    DependsOn: GuestbookFunction
+    Properties: 
+      RetentionInDays: 14
+      LogGroupName: !Join ["", ["/aws/lambda/", !Ref GuestbookFunction]]
+
+  GuestbookDynamoDBTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: "Fort_Wayne_AWS_User_Group_Guestbook"
+      PrimaryKey:
+        Name: name
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+        
